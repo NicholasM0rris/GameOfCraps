@@ -62,7 +62,7 @@ bool play_game(void){
         }
         else if(roll == 2 || roll == 3 || roll == 12){
             printf("You lose!\n");
-            wins += 1;
+            losses += 1;
             game_over = true;
         }
         //The player has not won or loss on first roll
