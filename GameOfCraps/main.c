@@ -13,13 +13,8 @@
 #include <ctype.h>
 #include <unistd.h>
 
-
-
-
 int roll_dice(void);
 bool play_game(void);
-
-
 
 int main(void){
     //Seed the random generator
@@ -41,6 +36,7 @@ int roll_dice(void){
 }
 
 bool play_game(void){
+    //Initialise
     int roll;
     bool game_over;
     int replay;
@@ -93,12 +89,12 @@ bool play_game(void){
                 wins += 1;
                 game_over = true;
             }
-            
         }
         //Check gameover statement. If it passes the while statement this will trigger
         if(game_over){
             printf("Play again? ");
             replay = getchar();
+            //If the value is new line ignore it and getchar again
             if(replay == 10){
                 replay = getchar();
             }
@@ -112,9 +108,8 @@ bool play_game(void){
                 printf("Thanks for playing!\n Wins: %d Losses: %d\n", wins,losses);
                 play_again = false;
             }
-            
         }
-        
-    }
+     }
+    //The player does not want to play anymore, time to exit.
     return 0;
 }
